@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 37.1</title>
+</head>
+<body>
+    <script>
+        function declaration(name) {
+            return name;
+        };
+
+        const expression = function(name) {
+            return name;
+        };
+
+        const arrow_1 = (name) => {
+            return name;
+        };
+
+        const arrow_2 = (name) => name;
+
+        console.log(declaration("Ruslan"))
+        console.log(expression("Ruslan"))
+        console.log(arrow_1("Ruslan"))
+        console.log(arrow_2("Ruslan"))
+    </script>
+</body>
+</html>

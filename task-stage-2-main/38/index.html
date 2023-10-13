@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 38.1</title>
+</head>
+<body>
+    <script>
+        function sum(value, type = 'odd') {
+            if (isNaN(value) || typeof value !== 'number') {
+                return NaN;
+            }
+            s = 0
+            if (type === 'odd') {
+                for (let i = 1; i <= value; i += 2) {
+                    s += i
+                }
+                return s
+            }
+            else {
+                for (let i = 0; i <= value; i += 2) {
+                    s += i
+                }
+                return s
+            }
+        }
+
+        const result = sum(6)
+        console.log(result)
+    </script>
+</body>
+</html>
