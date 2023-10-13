@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 32</title>
+</head>
+<body>
+    <script>
+        const value1 = "25.3";
+        const value2 = "786.867";
+
+        let formatter = new Intl.NumberFormat("ru", {
+            style: "currency",
+            currency: "RUB"
+        });
+        const result = formatter.format(Math.ceil(2*Number(value1)*Number(value2)));
+        console.log(result);
+
+    </script>
+</body>
+</html>

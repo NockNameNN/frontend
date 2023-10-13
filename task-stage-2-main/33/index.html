@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 33</title>
+</head>
+<body>
+    <script>
+        const _underfined = undefined;
+        const _null = null;
+        const _boolean = true;
+        const _number = 5;
+        const _bigInt = 1285195192512111111111111111111112144512412412;
+        const _symbol = Symbol();
+        const _string = "Meow";
+        const _objct = {name: 'Alex'};
+        const _array = [1, 2, 3];
+        const _function = function() {};
+        const _date = new Date();
+        console.log('_underfined: ', Number(_underfined), Boolean(_underfined), String(_underfined));
+        console.log('_null: ', Number(_null), Boolean(_null), String(_null));
+        console.log('_boolean: ', Number(_boolean), Boolean(_boolean), String(_boolean));
+        console.log('_number: ', Number(_number), Boolean(_number), String(_number));
+        console.log('_bigInt: ', Number(_bigInt), Boolean(_bigInt), String(_bigInt));
+        console.log('_symbol: ', Boolean(_symbol), String(_symbol));
+        console.log('_string: ', Number(_string), Boolean(_string), String(_string));
+        console.log('_objct: ', Number(_objct), Boolean(_objct), String(_objct));
+        console.log('_array: ', Number(_array), Boolean(_array), String(_array));
+        console.log('_function: ', Number(_function), Boolean(_function), String(_function));
+        console.log('_date: ', Number(_date), Boolean(_date), String(_date));
+    </script>
+</body>
+</html>
