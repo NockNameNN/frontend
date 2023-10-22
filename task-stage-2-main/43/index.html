@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 43</title>
+</head>
+<body>
+    <script>
+        const listUsers = [
+            {
+                firstName: 'Ivan',
+                birthday: '2005-02-15',
+                isAdult: false,
+            },
+            {
+                firstName: 'Yana',
+                birthday: '1990-04-12',
+                isAdult: true,
+            },
+            {
+                firstName: 'John',
+                birthday: '1993-07-01',
+                isAdult: true,
+            },
+            {
+                firstName: 'Roma',
+                birthday: '2018-05-11',
+                isAdult: false,
+            },
+            {
+                firstName: 'Alex',
+                birthday: '2000-10-15',
+                isAdult: true,
+            },
+        ]
+
+        const filterList = listUsers.filter((x) => x.isAdult === true);
+        const transformList = filterList.map((user) => {
+            return {
+                ...user,
+                birthday: new Date(user.birthday).toLocaleDateString('en-GB', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                }).split('/').join('.'),
+            };
+        });
+        const sortedList = {... transformList.sort((a, b) => a.firstName.localeCompare(b.firstName))};  
+
+        console.log(filterList)
+        console.log(transformList)
+        console.log(sortedList)
+
+    </script>
+</body>
+</html>
