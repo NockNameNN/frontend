@@ -157,7 +157,7 @@
             .then(response => response.json())
             .then(data => {
                 data.forEach(e => {
-                    option = document.createElement('option')
+                    const option = document.createElement('option')
                     option.text = e
                     select.appendChild(option)
                 })
