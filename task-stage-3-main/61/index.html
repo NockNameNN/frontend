@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 61</title>
+    <link rel="stylesheet" href="form.css">
+    <style>
+        body{
+            font-family: sans-serif;
+            margin: 0;
+        }
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+        .container{
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .grid{
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+<body class="container">
+    <div class="grid">
+        <input class="input js-input" type="text">
+        <select class="input input--select js-select">
+            <option selected disabled value="">Выберите машину</option>
+            <option value="1">Машина 1</option>
+            <option value="2">Машина 2</option>
+        </select>
+    </div>
+    <script>
+        const search = location.search
+        const hash = location.hash
+        const params_hash = new URLSearchParams(hash)
+        const params_search = new URLSearchParams(search)
+        
+        // console.log(params_hash.toString()) // После первого обновления страницы params_hash.get() становится null почему-то, хотя params_hash.toString() сохраняется
+        // console.log(params_hash.get('text')) // после второго и далее обновлений всё нормально
+
+        const input = document.querySelector('.js-input')
+        const select = document.querySelector('.js-select')
+
+        // input.value = params_hash.get('text')
+        // select.value = params_hash.get('car_id')
+        // input.addEventListener('change', (e) => {
+        //     params_hash.set('text', e.target.value);
+        //     location.hash = params_hash.toString()
+        // })
+
+        // select.addEventListener('change', (e) => {
+        //     params_hash.set('car_id', e.target.value)
+        //     location.hash = params_hash.toString()
+        // })
+
+        input.value = params_search.get('text')
+        select.value = params_search.get('car_id')
+        input.addEventListener('change', (e) => {
+            params_search.set('text', e.target.value);
+            location.search = params_search.toString()
+        })
+
+        select.addEventListener('change', (e) => {
+            params_search.set('car_id', e.target.value)
+            location.search = params_search.toString()
+        })
+        
+    </script>   
+</body>
+</html>
