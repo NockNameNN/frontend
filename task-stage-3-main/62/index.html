@@ -46,11 +46,12 @@
         const span = document.querySelector('.js-name')
 
         if (Cookies.get('name') != undefined) {
-            input.value = Cookies.get('name')
+            span.textContent = Cookies.get('name')
         }    
         
         btn.addEventListener('click', (e) => {
             Cookies.set('name', input.value, { expires: 3 })
+            span.textContent = Cookies.get('name')
         })
 
     </script>
